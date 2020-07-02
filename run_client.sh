@@ -2,12 +2,6 @@ set -e
 IP_SERVER="$1"
 APP_RUN="$2"
 echo "IP_SERVER: $IP_SERVER, APP_RUN: $APP_RUN"
-mkdir -p ~/.ssh
-sudo apt-get install ssh
-mv sshd_config /etc/ssh/sshd_config
-# echo $SSH_KEY1 >> ~/.ssh/authorized_keys
-# echo $SSH_KEY2 >> ~/.ssh/authorized_keys
-# service ssh restart
 
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config && echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 echo "LD_LIBRARY_PATH=/usr/lib64-nvidia" >> /root/.bashrc && echo "export LD_LIBRARY_PATH" >> /root/.bashrc
